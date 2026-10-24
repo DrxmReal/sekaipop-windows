@@ -1,0 +1,5 @@
+# Mark third-party SDK and vendor headers as vendored so they don't skew language statistics
+sdk/** linguist-vendored
+sdk/* linguist-vendored
+es/** linguist-vendored
+ui/wallpapers_data.js linguist-generated
