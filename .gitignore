@@ -1,0 +1,30 @@
+# Rust & Cargo
+target/
+src-tauri/target/
+*.pdb
+**/*.rs.bk
+
+# Binaries (Published via GitHub Releases)
+*.exe
+!es/es.exe
+*.zip
+*.dll
+!WebView2Loader.dll
+
+# Runtime caches & Webview profiles
+webview_data/
+apps_cache.json
+launcher_hwnd.txt
+
+# Logs & Test Dumps
+*.log
+mod_debug.log
+crop_test.png
+screen_3d_test.png
+
+# Node / Editor
+node_modules/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

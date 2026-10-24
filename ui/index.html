@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SekaiPop Launcher</title>
+    <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+<body>
+    <div id="phone-container" class="phone-container active">
+        <!-- 2.5D Smartphone Outer Shell -->
+        <div class="phone-body" id="phone-body">
+            <!-- Hardware Physical Buttons on 3D Bevel -->
+            <div class="hw-btn hw-power"></div>
+            <div class="hw-btn hw-vol-up"></div>
+            <div class="hw-btn hw-vol-down"></div>
+            <div class="hw-port-usbc"></div>
+            <div class="hw-speaker-grille"><span></span><span></span><span></span><span></span></div>
+
+            <!-- Dynamic Notch / Pill Speaker (Rotates to left bezel in landscape) -->
+            <div class="phone-notch">
+                <div class="notch-speaker"></div>
+                <div class="notch-cam"></div>
+            </div>
+
+            <!-- Phone Glass Screen Area -->
+            <div class="phone-screen">
+                <div class="screen-glass-sheen"></div>
+                <!-- VIEW 1: PORTRAIT LAUNCHER -->
+                <div id="portrait-view" class="view-container active">
+                    <!-- Anime Wallpaper Header Banner -->
+                    <div class="screen-banner">
+                        <img src="active_wallpaper.jpg" alt="Sekai Banner" class="banner-img">
+                        <div class="banner-gradient"></div>
+                    </div>
+
+                    <!-- Status Bar -->
+                    <header class="status-bar">
+                        <div class="status-left">
+                            <span id="status-time" class="time">12:00 PM</span>
+                            <span id="status-date" class="date">Tue, Oct 20</span>
+                        </div>
+                        <div class="status-right">
+                            <span class="net-speed">835 B/s <svg class="svg-icon" viewBox="0 0 24 24" style="width:11px;height:11px;"><path d="M12 5v14M19 12l-7 7-7-7"/></svg></span>
+                            <span class="status-icon wifi" title="Network"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></span>
+                            <span id="status-battery" class="battery">100% <svg class="svg-icon" viewBox="0 0 24 24" style="width:12px;height:12px;"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/></svg></span>
+                        </div>
+                    </header>
+
+                    <!-- Profile Card & Quick Actions -->
+                    <div class="profile-card">
+                        <div class="profile-avatar-wrap">
+                            <img src="avatar.png" alt="Avatar" class="profile-avatar">
+                            <span class="avatar-badge"></span>
+                        </div>
+                        <div class="profile-meta">
+                            <div class="profile-handle" id="theme-btn" title="Click to cycle theme">
+                                <span class="handle-name">@dr4m</span>
+                                <span class="handle-pill" id="theme-label">INDIGO NIGHT</span>
+                            </div>
+                            <div class="profile-sub"><span id="profile-date">Tue, Oct 20</span> • Windows 11</div>
+                        </div>
+                        <div class="profile-actions">
+                            <button id="btn-open-settings" class="icon-btn" title="Open Settings (Landscape Mode)"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+                            <button id="refresh-btn" class="icon-btn" title="Reload apps"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg></button>
+                            <button id="close-btn" class="icon-btn close" title="Dismiss (Esc)"><svg class="svg-icon" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg></button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Control Toggles -->
+                    <div class="quick-controls">
+                        <div class="quick-pill active" id="toggle-wifi">
+                            <span class="qp-icon"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg></span>
+                            <div class="qp-text">
+                                <span class="qp-title">Wi-Fi</span>
+                                <span class="qp-status">Connected</span>
+                            </div>
+                        </div>
+                        <div class="quick-pill active" id="toggle-bt">
+                            <span class="qp-icon"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg></span>
+                            <div class="qp-text">
+                                <span class="qp-title">Audio</span>
+                                <span class="qp-status">Headset</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Sliders (Volume & Brightness) -->
+                    <div class="slider-row">
+                        <div class="slider-box">
+                            <span class="slider-icon"><svg class="svg-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></span>
+                            <input type="range" id="vol-slider" min="0" max="100" value="70">
+                        </div>
+                        <div class="slider-box">
+                            <span class="slider-icon"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+                            <input type="range" id="bright-slider" min="10" max="100" value="85">
+                        </div>
+                    </div>
+
+                    <!-- Search Input Bar -->
+                    <div class="search-wrap">
+                        <span class="search-icon"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg></span>
+                        <input type="text" id="search-input" placeholder="Search apps, calc, commands..." autocomplete="off" spellcheck="false" autofocus>
+                        <span id="search-count" class="search-tag">ALL</span>
+                    </div>
+
+                    <!-- Main Scrollable App Canvas -->
+                    <main class="content-scroll" id="content-scroll">
+                        <!-- Quick Pinned Grid -->
+                        <section class="section-pinned" id="section-pinned">
+                            <div class="section-title">PINNED FAVORITES</div>
+                            <div class="pinned-grid">
+                                <button class="pin-card" data-id="wezterm" data-name="WezTerm">
+                                    <span class="pin-icon teal"><svg class="svg-icon" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg></span>
+                                    <span class="pin-label">WezTerm</span>
+                                </button>
+                                <button class="pin-card" data-id="explorer.exe" data-name="Explorer">
+                                    <span class="pin-icon yellow"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>
+                                    <span class="pin-label">Files</span>
+                                </button>
+                                <button class="pin-card" data-id="Google.AntigravityIDE" data-name="Antigravity">
+                                    <span class="pin-icon purple"><svg class="svg-icon" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg></span>
+                                    <span class="pin-label">Antigravity</span>
+                                </button>
+                                <button class="pin-card" id="pin-settings" data-name="Settings">
+                                    <span class="pin-icon blue"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+                                    <span class="pin-label">Settings</span>
+                                </button>
+                                <button class="pin-card" data-id="taskmgr.exe" data-name="Task Manager">
+                                    <span class="pin-icon green"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+                                    <span class="pin-label">TaskMgr</span>
+                                </button>
+                                <button class="pin-card" data-id="chrome.exe" data-name="Browser">
+                                    <span class="pin-icon orange"><svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+                                    <span class="pin-label">Browser</span>
+                                </button>
+                            </div>
+                        </section>
+
+                        <!-- Curated Shortcuts & Utilities List -->
+                        <section class="section-apps">
+                            <div class="section-title">
+                                <span id="section-heading">PHÍM TẮT &amp; TIỆN ÍCH</span>
+                                <span id="app-counter" class="sub-count">...</span>
+                            </div>
+                            <div class="app-list" id="app-list">
+                                <div class="loading-state">Đang tải phím tắt...</div>
+                            </div>
+                        </section>
+                    </main>
+
+                    <!-- Bottom System Bar & Power Pad -->
+                    <footer class="system-deck">
+                        <button class="deck-btn" id="btn-lock" title="Lock Windows" onclick="executePowerAction('lock')"><svg class="svg-icon" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Lock</button>
+                        <button class="deck-btn" id="btn-sleep" title="Sleep" onclick="executePowerAction('sleep')"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg> Sleep</button>
+                        <button class="deck-btn" id="btn-restart" title="Restart" onclick="executePowerAction('restart')"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg> Restart</button>
+                        <button class="deck-btn danger" id="btn-power" title="Shut Down" onclick="executePowerAction('shutdown')"><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg> Power</button>
+                    </footer>
+                </div>
+
+                <!-- VIEW 2: LANDSCAPE SETTINGS (IMAGE 4) -->
+                <div id="settings-view" class="view-container">
+                    <!-- Landscape Top Header Bar -->
+                    <header class="settings-header">
+                        <div class="settings-header-badge">
+                            <div class="settings-pill-icon">
+                                <svg class="svg-icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                            </div>
+                            <div class="settings-header-text">
+                                <span class="settings-main-title">Settings</span>
+                                <span class="settings-sub-title">Pick a category or area to configure</span>
+                            </div>
+                        </div>
+
+                        <div class="settings-header-right">
+                            <div class="settings-clock-pill">
+                                <span id="ls-time" class="ls-time">07:56 PM</span>
+                                <span id="ls-date" class="ls-date">Sun, 11 Oct</span>
+                            </div>
+                            <button id="settings-close-btn" class="settings-close-pill" title="Back to Portrait">
+                                <svg class="svg-icon" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+                            </button>
+                        </div>
+                    </header>
+
+                    <!-- 6-Tile Settings Grid (Image 4) -->
+                    <div class="settings-grid">
+                        <!-- Tile 01: Quick -->
+                        <div class="setting-card card-quick" data-tile="quick">
+                            <div class="card-num">01</div>
+                            <div class="card-content">
+                                <div class="card-badge teal">
+                                    <svg class="svg-icon" viewBox="0 0 24 24">
+                                        <line x1="4" x2="4" y1="21" y2="14"/>
+                                        <line x1="4" x2="4" y1="10" y2="3"/>
+                                        <line x1="12" x2="12" y1="21" y2="12"/>
+                                        <line x1="12" x2="12" y1="8" y2="3"/>
+                                        <line x1="20" x2="20" y1="21" y2="16"/>
+                                        <line x1="20" x2="20" y1="12" y2="3"/>
+                                        <line x1="1" x2="7" y1="14" y2="14"/>
+                                        <line x1="9" x2="15" y1="8" y2="8"/>
+                                        <line x1="17" x2="23" y1="16" y2="16"/>
+                                    </svg>
+                                </div>
+                                <div class="card-title">Quick</div>
+                                <div class="card-desc">The things you reach for most</div>
+                            </div>
+                        </div>
+
+                        <!-- Tile 02: General -->
+                        <div class="setting-card card-general" data-tile="general">
+                            <div class="card-num">02</div>
+                            <div class="card-content">
+                                <div class="card-badge pink">
+                                    <svg class="svg-icon" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                    </svg>
+                                </div>
+                                <div class="card-title">General</div>
+                                <div class="card-desc">How the shell behaves</div>
+                            </div>
+                        </div>
+
+                        <!-- Tile 03: Wallpaper Engine (Replaces Bar) -->
+                        <div class="setting-card card-wallpaper" data-tile="wallpaper">
+                            <div class="card-num">03</div>
+                            <div class="card-content">
+                                <div class="card-badge yellow">
+                                    <svg class="svg-icon" viewBox="0 0 24 24">
+                                        <rect width="18" height="18" x="3" y="3" rx="2"/>
+                                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                                        <polyline points="21 15 16 10 5 21"/>
+                                    </svg>
+                                </div>
+                                <div class="card-title">Wallpaper Engine</div>
+                                <div class="card-desc">Phone screen &amp; desktop live wallpapers</div>
+                            </div>
+                        </div>
+
+                        <!-- Tile 04: Desktop -->
+                        <div class="setting-card card-desktop" data-tile="desktop">
+                            <div class="card-num">04</div>
+                            <div class="card-content">
+                                <div class="card-badge purple">
+                                    <svg class="svg-icon" viewBox="0 0 24 24">
+                                        <rect width="20" height="14" x="2" y="5" rx="2"/>
+                                        <line x1="2" x2="22" y1="10" y2="10"/>
+                                    </svg>
+                                </div>
+                                <div class="card-title">Desktop</div>
+                                <div class="card-desc">Wallpaper, widgets and effects</div>
+                            </div>
+                        </div>
+
+                        <!-- Tile 05: GlazeWM / Hyprland -->
+                        <div class="setting-card card-wm" data-tile="wm">
+                            <div class="card-num">05</div>
+                            <div class="card-content">
+                                <div class="card-badge green">
+                                    <svg class="svg-icon" viewBox="0 0 24 24">
+                                        <rect width="7" height="7" x="3" y="3" rx="1"/>
+                                        <rect width="7" height="7" x="14" y="3" rx="1"/>
+                                        <rect width="7" height="7" x="14" y="14" rx="1"/>
+                                        <rect width="7" height="7" x="3" y="14" rx="1"/>
+                                    </svg>
+                                </div>
+                                <div class="card-title">GlazeWM</div>
+                                <div class="card-desc">Windows, workspaces and input</div>
+                            </div>
+                        </div>
+
+                        <!-- Tile 06: About / Update -->
+                        <div class="setting-card card-about" data-tile="about">
+                            <div class="card-num">06</div>
+                            <div class="card-content">
+                                <div class="card-badge blue">
+                                    <svg class="svg-icon" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="12" x2="12" y1="16" y2="12"/>
+                                        <line x1="12" x2="12.01" y1="8" y2="8"/>
+                                    </svg>
+                                </div>
+                                <div class="card-title">About / Update</div>
+                                <div class="card-desc">Version, updates and credits</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 3: WALLPAPER ENGINE MANAGER (LANDSCAPE VIEW) -->
+                <div id="wallpaper-view" class="view-container">
+                    <header class="wp-header">
+                        <div class="wp-header-left">
+                            <button id="wp-back-btn" class="icon-btn" title="Back to Settings">
+                                <svg class="svg-icon" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+                            </button>
+                            <div class="wp-title-block">
+                                <span class="wp-main-title">Wallpaper Engine</span>
+                                <span class="wp-sub-title">Live Wallpapers (307)</span>
+                            </div>
+                            <div class="wp-search-box">
+                                <input type="text" id="wp-search-input" placeholder="Search wallpapers..." autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="wp-header-right">
+                            <button id="wp-sync-pc-btn" class="wp-pill-btn" title="Sync current PC desktop wallpaper">
+                                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+                                <span>Sync PC</span>
+                            </button>
+                            <button id="wp-open-app-btn" class="wp-pill-btn highlight" title="Launch Wallpaper Engine App">
+                                <svg class="svg-icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                                <span>Open App</span>
+                            </button>
+                            <button id="wp-close-btn" class="settings-close-pill" title="Back to Portrait">
+                                <svg class="svg-icon" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+                            </button>
+                        </div>
+                    </header>
+
+                    <!-- Wallpaper Cards Grid / Carousel -->
+                    <div class="wp-grid-wrap" id="wp-grid">
+                        <!-- Populated dynamically by app.js -->
+                    </div>
+
+                    <!-- Wallpaper Bottom Controls -->
+                    <footer class="wp-footer">
+                        <div class="wp-active-status">
+                            <span class="wp-status-dot"></span>
+                            <span id="wp-status-text">Active: Cosmic Blue (Desktop)</span>
+                        </div>
+                        <div class="wp-footer-buttons">
+                            <button id="wp-apply-desktop-btn" class="wp-btn-action" title="Apply selected wallpaper to Windows desktop via Wallpaper Engine">
+                                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                Apply to Windows Desktop
+                            </button>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification for Settings Interactions -->
+    <div id="toast" class="toast">Action Triggered</div>
+
+    <script src="active_palette.js?v=3.0"></script>
+    <script src="wallpapers_data.js?v=3.0"></script>
+    <script src="app.js?v=3.0"></script>
+</body>
+</html>
